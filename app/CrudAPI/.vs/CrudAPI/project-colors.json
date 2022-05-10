@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "153e0365-2b18-4aea-93d0-d7b5e551de09": {
+      "ProjectGuid": "153e0365-2b18-4aea-93d0-d7b5e551de09",
+      "DisplayName": "CrudAPI",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
