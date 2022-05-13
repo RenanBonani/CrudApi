@@ -4,10 +4,10 @@ using CrudAPI.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<ClientDatabaseSettings>
+builder.Services.Configure<CustomerDatabaseSettings>
     (builder.Configuration.GetSection("DevNetStoreDatabase"));
 
-builder.Services.AddSingleton<ClientServices>();
+builder.Services.AddSingleton<CustomerServices>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

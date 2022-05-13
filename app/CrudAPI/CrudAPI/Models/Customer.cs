@@ -1,24 +1,30 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace CrudAPI.Models
 {
-    public class Client
+    public class Customer
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string? ClientId { get; set; }
+        public string? Id { get; set; }
 
-        [BsonElement("First_Name")]
+        [Required]
+        [MinLength(3,ErrorMessage = "Required Name")]
+        [BsonElement("first_name")]
         public string FirstName { get; set; } = null;
 
-        [BsonElement("Last_Name")]
+        [Required]
+        [BsonElement("last_name")]
         public string LastName { get; set; } = null;
 
-        [BsonElement("Email")]
+        [Required]
+        [BsonElement("email")]
         public string Email { get; set; } = null;
 
-        [BsonElement("Gender")]
+        [Required]
+        [BsonElement("gender")]
         public string Gender { get; set; } = null;
     }
 }

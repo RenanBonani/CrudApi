@@ -41,3 +41,7 @@ C:\CrudAPI\CrudApi\app\CrudAPI\CrudAPI\obj\Debug\net6.0\CrudAPI.dll
 C:\CrudAPI\CrudApi\app\CrudAPI\CrudAPI\obj\Debug\net6.0\ref\CrudAPI.dll
 C:\CrudAPI\CrudApi\app\CrudAPI\CrudAPI\obj\Debug\net6.0\CrudAPI.pdb
 C:\CrudAPI\CrudApi\app\CrudAPI\CrudAPI\obj\Debug\net6.0\CrudAPI.genruntimeconfig.cache
+C:\CrudAPI\CrudApi\app\CrudAPI\CrudAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\CrudAPI\CrudApi\app\CrudAPI\CrudAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\CrudAPI\CrudApi\app\CrudAPI\CrudAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\CrudAPI\CrudApi\app\CrudAPI\CrudAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
