@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -20,7 +20,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
   public modalRef: BsModalRef;
   public customerForm: FormGroup;
   public title = 'Customers';
-  public customerSelect: Customer;
+  public customerSelected: Customer;
   public textSimple: string;
 
   private unsubscriber = new Subject();
@@ -67,7 +67,7 @@ export class CustomersComponent implements OnInit, OnDestroy {
       if (this.modeSave === 'post') {
         this.customer = { ...this.customerForm.value };
       } else {
-        this.customer = { id: this.customerSelect.id, ...this.customerForm.value };
+        this.customer = { id: this.customerSelected.id, ...this.customerForm.value };
       }
 
       this.customerService[this.modeSave](this.customer)
@@ -81,7 +81,6 @@ export class CustomersComponent implements OnInit, OnDestroy {
             console.error(error);
           }, () => this.spinner.hide()
         );
-
     }
   }
 
@@ -103,17 +102,17 @@ export class CustomersComponent implements OnInit, OnDestroy {
 
   customerSelect(customer: Customer) {
     this.modeSave = 'put';
-    this.customerSelect = customer;
+    this.customerSelected = customer;
     this.customerForm.patchValue(customer);
   }
 
   customerNew(customer: Customer) {
-    this.customerSelect = new Customer();
+    this.customerSelected = new Customer();
     this.customerForm.patchValue(this.customerSelect);
   }
 
   back() {
-    this.customerSelect = null;
+    this.customerSelected = null;
   }
 
 }

@@ -1,11 +1,11 @@
 <div class="row">
 
-  <div class="col-sm-6" *ngIf="customerSelect">
-    <app-title [title]="'Cód. Customer: ' + customerSelect.id">
+  <div class="col-sm-6" *ngIf="customerSelected">
+    <app-title [title]="'Cód. Customer: ' + customerSelected.id">
       <button class="btn btn-sm btn-outline-danger" (click)="back()">Exit</button>
     </app-title>
 
-    <form [formGroup]="customerForm" (submit)="customerSubmit()">
+    <form [formGroup]="customerForm">
       <div class="form-group">
         <label for="formGroupExampleInput">First Name</label>
         <input type="text" formControlName="firstName" class="form-control">
@@ -29,10 +29,10 @@
     </form>
   </div>
 
-  <div [ngClass]="{'col-sm-6': customerSelect, 'col-sm-12': !customerSelect}">
+  <div [ngClass]="{'col-sm-6': customerSelected, 'col-sm-12': !customerSelected}">
     <app-title [title]="title">
-      <button class="btn btn-success" (click)="customerNew()">Register Customer</button>
     </app-title>
+    <button class="btn btn-success" (click)="customerNew(customer)">Register Customer</button>
 
 
     <table class="table table-hover">
@@ -49,8 +49,7 @@
       <tbody>
         <tr *ngFor="let customer of customers">
           <td>
-            <button (click)="customerSelect(customer)" class="text-dark btn btn-sm btn-outline-warning">Details
-              Details</button>
+            <button (click)="customerSelect(customer)" class="text-dark btn btn-sm btn-outline-warning">Details</button>
           </td>
           <td>{{customer.firstName}}</td>
           <td>{{customer.lastName}}</td>
