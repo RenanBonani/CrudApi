@@ -1,0 +1,69 @@
+<div class="row">
+
+  <div class="col-sm-6" *ngIf="customerSelect">
+    <app-title [title]="'Cód. Customer: ' + customerSelect.id">
+      <button class="btn btn-sm btn-outline-danger" (click)="back()">Exit</button>
+    </app-title>
+
+    <form [formGroup]="customerForm" (submit)="customerSubmit()">
+      <div class="form-group">
+        <label for="formGroupExampleInput">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Gender</label>
+        <input type="text" formControlName="gender" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Email</label>
+        <input type="email" formControlName="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <hr>
+        <button class="btn btn-success" (click)="saveCustomer()" [disabled]="!customerForm.valid">Send</button>
+      </div>
+    </form>
+  </div>
+
+  <div [ngClass]="{'col-sm-6': customerSelect, 'col-sm-12': !customerSelect}">
+    <app-title [title]="title">
+      <button class="btn btn-success" (click)="customerNew()">Register Customer</button>
+    </app-title>
+
+
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">View</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Email</th>
+          <th scope="col">Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>
+            <button (click)="customerSelect(customer)" class="text-dark btn btn-sm btn-outline-warning">Details
+              </Details></button>
+          </td>
+          <td>{{customer.firstName}}</td>
+          <td>{{customer.lastName}}</td>
+          <td>{{customer.gender}}</td>
+          <td>{{customer.email}}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-outline-danger">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
