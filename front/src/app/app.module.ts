@@ -34,7 +34,6 @@ import { TitleComponent } from './components/shared/title/title.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     ReactiveFormsModule,
